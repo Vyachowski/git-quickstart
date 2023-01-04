@@ -1,0 +1,110 @@
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Base Styles
+- Typography
+– Variables
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+– Other styles
+*/
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+* {
+  outline: 1px solid orange;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  width: 1080px;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: #222222; }
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Inter-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Inter-Bold.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Roboto-Regular.ttf");
+  font-display: swap;
+}
+
+
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --mobile-width: 320px;
+  --tablet-width: 768px;
+  --desktop-width: 1080px;
+
+}
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– --
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+*/
+
+/* Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.header-main__navigation {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+}
+
+.main-header__img {
+  display: block;
+  object-fit: contain;
+}
+
+.header-main__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
