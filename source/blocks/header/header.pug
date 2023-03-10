@@ -1,20 +1,49 @@
 .container
-  nav.navbar.navbar-expand-lg.bg-light.rounded(aria-label='Navigation')
+  nav.navbar.navbar-expand-lg.bg-body-tertiary.rounded.py-4.px-4
     .container-fluid
-      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarsExample11' aria-controls='navbarsExample11' aria-expanded='false' aria-label='Toggle navigation')
+      a.navbar-brand(href='#')
+        mark { Слава Коду! }
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarToggler' aria-controls='navbarTogglerDemo02' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
-      .collapse.navbar-collapse.d-lg-flex
-        a.navbar-brand.col-lg-3.me-0(href='#')
-          mark { Слава Коду! }
-        ul.navbar-nav.col-lg-6.justify-content-lg-center
+      #navbarToggler.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
           li.nav-item
-            a.nav-link.active(aria-current='page' href='#') Home
+            a.nav-link.active(aria-current='page' href='#') Telegram
           li.nav-item
-            a.nav-link(href='#') Link
+            a.nav-link(href='#') Instagram
           li.nav-item
-            a.nav-link.disabled Disabled
-        .d-lg-flex.col-lg-3.justify-content-lg-end
-          button.dropdown__toggle.btn.btn-secondary.dropdown-toggle(id="lang" type="button" data-bs-toggle="dropdown" aria-expanded="false") English
-          ul.dropdown__menu.dropdown-menu
+            a.nav-link.disabled Twitter
+        .dropdown
+          button.btn.btn-outline-secondary.dropdown-toggle(type="button" data-bs-toggle="dropdown" aria-expanded="false") EN
+          ul.dropdown-menu.dropdown-menu-lg-end
             li
-              a.dropdown__item.dropdown-item Русский
+              a.dropdown-item.text-lg-end(href="/ru/index.html") РУ
+
+
+
+
+
+
+
+
+
+  //- nav.navbar.navbar-expand-lg.bg-light.rounded(aria-label='Navigation')
+  //-   .container-fluid
+  //-     a.navbar-brand.col-lg-3.me-0(href='#')
+  //-       mark { Слава Коду! }
+  //-     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarHeader' aria-controls='navbarHeader' aria-expanded='false' aria-label='Toggle navigation')
+  //-       span.navbar-toggler-icon
+  //-     #navbarHeader.collapse.navbar-collapse.d-lg-flex
+  //-       ul.navbar-nav.col-lg-6.justify-content-lg-center
+  //-         li.nav-item
+  //-           a.nav-link.active(aria-current='page' href='#') Home
+  //-         li.nav-item
+  //-           a.nav-link(href='#') Link
+  //-         li.nav-item
+  //-           a.nav-link.disabled Disabled
+      //- button.dropdown__toggle.btn.btn-secondary.dropdown-toggle(id="lang" type="button" data-bs-toggle="dropdown" aria-expanded="false") English
+        //- ul.dropdown__menu.dropdown-menu
+        //-   li
+        //-     a.dropdown__item.dropdown-item Русский
+      //- .d-lg-flex.col-lg-3.justify-content-lg-end
+

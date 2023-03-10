@@ -1,13 +1,13 @@
 section#guide.container
   .row
-    ul#myTab.nav.nav-tabs(role='tablist')
+    ul#myTab.nav.nav-tabs.nav-fill(role='tablist')
       each value, key in steps
         li.nav-item(role='presentation')
           if key === '1'
             button(id=value + '-tab' class='nav-link active' data-bs-toggle='tab' data-bs-target='#' + value + '-tab-pane' type='button' role='tab' aria-controls=value + '-tab-pane' aria-selected='true')= value
           else
             button(id=value + '-tab' class='nav-link' data-bs-toggle='tab' data-bs-target='#' + value + '-tab-pane' type='button' role='tab' aria-controls=value + '-tab-pane' aria-selected='false')= value
-    #myTabContent.tab-content
+    #myTabContent.tab-content.border-start.border-end.border-bottom
       each value, key in steps
         if key === '1'
           .tab-pane.fade.show.active(id=value + '-tab-pane' role='tabpanel' aria-labelledby=value + '-tab' tabindex='0')
