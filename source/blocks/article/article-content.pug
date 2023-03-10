@@ -1,0 +1,46 @@
+.col.border-end
+  case key
+    when '1'
+      include:markdown-it ../../articles/1/install.md
+    when '2'
+      include:markdown-it ../../articles/2/initialize.md
+    when '3'
+      include:markdown-it ../../articles/3/clone.md
+    when '4'
+      include:markdown-it ../../articles/4/add.md
+    when '5'
+      include:markdown-it ../../articles/5/commit.md
+    when '6'
+      include:markdown-it ../../articles/6/push.md
+    when '7'
+      include:markdown-it ../../articles/7/branch.md
+    when '8'
+      include:markdown-it ../../articles/8/merge.md
+    when '9'
+      include:markdown-it ../../articles/9/tag.md
+    when '10'
+      include:markdown-it ../../articles/10/log.md
+    default
+      include:markdown-it ../../articles/0/no-do.md
+.col
+  case key
+    when '1'
+      include:markdown-it ../../articles/1/uninstall.md
+    when '2'
+      include:markdown-it ../../articles/2/uninitialize.md
+    when '3'
+      include:markdown-it ../../articles/3/delete.md
+    when '4'
+      include:markdown-it ../../articles/4/clear-cache.md
+    when '5'
+      include:markdown-it ../../articles/5/reset.md
+    when '6'
+      include:markdown-it ../../articles/6/revert.md
+    when '7'
+      include:markdown-it ../../articles/7/delete-branch.md
+    when '8'
+      include:markdown-it ../../articles/8/unmerge.md
+    when '9'
+      include:markdown-it ../../articles/9/delete-tag.md
+    default
+      include:markdown-it ../../articles/0/no-undo.md

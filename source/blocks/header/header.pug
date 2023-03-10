@@ -1,0 +1,20 @@
+.container
+  nav.navbar.navbar-expand-lg.bg-light.rounded(aria-label='Navigation')
+    .container-fluid
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarsExample11' aria-controls='navbarsExample11' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse.d-lg-flex
+        a.navbar-brand.col-lg-3.me-0(href='#')
+          mark { Слава Коду! }
+        ul.navbar-nav.col-lg-6.justify-content-lg-center
+          li.nav-item
+            a.nav-link.active(aria-current='page' href='#') Home
+          li.nav-item
+            a.nav-link(href='#') Link
+          li.nav-item
+            a.nav-link.disabled Disabled
+        .d-lg-flex.col-lg-3.justify-content-lg-end
+          button.dropdown__toggle.btn.btn-secondary.dropdown-toggle(id="lang" type="button" data-bs-toggle="dropdown" aria-expanded="false") English
+          ul.dropdown__menu.dropdown-menu
+            li
+              a.dropdown__item.dropdown-item Русский

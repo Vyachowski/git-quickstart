@@ -10,3 +10,4 @@ npm-debug.*
 Thumbs.db
 *.code-workspace
 images/PixelPerfect
+build/
