@@ -1,5 +1,5 @@
-section#guide.container
-  h1.display-3.fw-bold.mb-4.text-center#scrollspyHeading2 Git How To
+section#scrollspyHeading2.container
+  h1.display-3.fw-bold.mb-4.text-center Git How To
   .row
     ul#myTab.nav.nav-tabs.nav-fill(role='tablist')
       each value, key in steps
@@ -14,9 +14,9 @@ section#guide.container
           .tab-pane.fade.show.active(id=value + '-tab-pane' role='tabpanel' aria-labelledby=value + '-tab' tabindex='0')
             .container.px-4.py-5
               article.row
-                include ../article/article-content
+                include ../template/_article-content
         else
           .tab-pane.fade(id=value + '-tab-pane' role='tabpanel' aria-labelledby=value + '-tab' tabindex='0')
             .container.px-4.py-5
               article.row
-                include ../article/article-content
+                include ../template/_article-content

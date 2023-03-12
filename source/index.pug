@@ -1,19 +1,14 @@
-//- All template content on the page
-- var title = "Git quickstart page for beginners";
-- var hero_title = "The simpliest guide to use Git";
-- var hero_subtitle = "Start from a scratch a new typical project based on git and maintain it with a 10 simple steps";
-- var steps = { 1: "Setup", 2: "Inititalize", 3: "Clone", 4: "Stage", 5: "Commit", 6: "Push", 7: "Branch", 8: "Merge", 9: "Tag", 10: "Log" }
-
-//- Main structure
-doctype html
-head
-  include blocks/head/head
-  body(data-bs-spy="scroll" data-bs-target="#navigation_header" tabindex="0" data-bs-smooth-scroll="true")
-    header.navbar.navbar-dark.navbar-expand-lg.bd-navbar.sticky-top.bg-primary
-      include blocks/header/header
-    main.container.gy-3
-      include blocks/hero/hero
-      include blocks/guide/guide
-    footer.container
-      include blocks/footer/footer
-      include blocks/scripts/scripts
+extends template/_layout
+block header
+  header.navbar.navbar-dark.navbar-expand-lg.bd-navbar.sticky-top.bg-primary
+    - const hero_title = "The simpliest guide to use Git"
+    - const hero_subtitle = "Start from a scratch a new typical project based on git and maintain it with a 10 simple steps"
+    include template/_header
+block main
+  main.container.gy-3
+    include template/_hero
+    - const steps = { 1: "Setup", 2: "Inititalize", 3: "Clone", 4: "Stage", 5: "Commit", 6: "Push", 7: "Branch", 8: "Merge", 9: "Tag", 10: "Log" }
+    include template/_guide
+block footer
+  footer.container
+    include template/_footer
