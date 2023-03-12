@@ -6,9 +6,10 @@ head
   body
     header
       include blocks/header/header
-    main
+    main.container.gy-3
       include blocks/main-container/main-container
       include blocks/hero/hero
       include blocks/guide/guide
-    include blocks/footer/footer
-    include blocks/scripts/scripts
+    footer.container
+      include blocks/footer/footer
+      include blocks/scripts/scripts
