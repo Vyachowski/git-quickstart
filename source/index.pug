@@ -1,15 +1,17 @@
 extends template/_layout
 block head
-    - const title = "Git quickstart page for beginners"
+  - const lang = "en"
+  - const title = "Git quickstart page for beginners"
+    include template/_head
 block header
   header.navbar.navbar-dark.navbar-expand-lg.bd-navbar.sticky-top.bg-primary
     - const hero_title = "The simpliest guide to use Git"
     - const hero_subtitle = "Start from a scratch a new typical project based on git and maintain it with a 10 simple steps"
     include template/_header
 block main
-  main.container.gy-3
+  main
+    - const steps = { 1: "Inititalize", 2: "Clone", 3: "Stage", 4: "Commit", 5: "Push", 6: "Branch", 7: "Merge", 8: "Tag", 9: "Log" }
     include template/_hero
-    - const steps = { 1: "Setup", 2: "Inititalize", 3: "Clone", 4: "Stage", 5: "Commit", 6: "Push", 7: "Branch", 8: "Merge", 9: "Tag", 10: "Log" }
     include template/_guide
 block footer
   footer.container
