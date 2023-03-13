@@ -10,7 +10,8 @@ block header
     include template/_header
 block main
   main
-    - const steps = { 1: "Set up", 2: "Initialize", 3: "Copy", 4: "Stage", 5: "Commit", 6: "Push", 7: "Branch", 8: "Merge", 9: "Tag", 10: "Log" }
+    //- IMPORTANT: Allowed only letters and "-"/"_" symbols in steps values. Spaces are disallowed.
+    - const steps = { 1: "Setup", 2: "Initialize", 3: "Copy", 4: "Stage", 5: "Commit", 6: "Push", 7: "Branch", 8: "Merge", 9: "Tag", 10: "Log" }
     include template/_hero
     include template/_guide
 block footer
