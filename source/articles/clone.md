@@ -1,4 +1,4 @@
-## Clone your project
+## Clone existing project
 --------------
 
 - Copy your local folder  
