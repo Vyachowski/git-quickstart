@@ -1,7 +1,18 @@
 section.container.px-4.py-5#scrollspyHeading1
   .row.flex-lg-row-reverse.align-items-center.g-5.py-5.h-100
-    .col-10.col-sm-8.col-lg-6
-      img.d-block.mx-lg-auto.img-fluid(src='img/bootstrap-docs.png', alt='Bootstrap Themes', width='700', height='500', loading='lazy')
+    .col-10.col-sm-8.col-lg-6.shadow.rounded
+      h2 Install git
+      hr
+      h3 For macOS
+      code `brew install git`
+      p or install it with a [binary installer ](https://git-scm.com/download/mac)
+      h3 For Windows
+      code `winget install --id Git.Git -e --source winget`
+      p - or install it with a [binary installer ](https://git-scm.com/download/win)
+      h3 For Linux
+      p Choose your distributive on [git-scm](https://git-scm.com/download/linux) and install the right variant
+      //- Old Variant DELETE AFTER FINISHING BLOCK!!!
+      //- img.d-block.mx-lg-auto.img-fluid(src='img/bootstrap-docs.png', alt='Bootstrap Themes', width='700', height='500', loading='lazy')
     .col-lg-6
       h1.display-5.lh-1.mb-3=hero_title
       p.lead= hero_subtitle
