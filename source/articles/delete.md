@@ -1,4 +1,4 @@
-## Delete copy
+## Delete a copy
 --------------
 
-- Same as on previous step
+- Delete all files from your working directory except .git
