@@ -10,10 +10,12 @@
       include:markdown-it ../articles/add.md
     when '5'
       include:markdown-it ../articles/commit.md
-    //- when '6'
-    //-   include:markdown-it ../articles/7/branch.md
-    //- when '7'
-    //-   include:markdown-it ../articles/8/merge.md
+    when '6'
+      include:markdown-it ../articles/push.md
+    when '7'
+      include:markdown-it ../articles/branch.md
+    when '8'
+      include:markdown-it ../articles/merge.md
     //- when '8'
     //-   include:markdown-it ../articles/9/tag.md
     //- when '9'
@@ -30,12 +32,12 @@
       include:markdown-it ../articles/clear-cache.md
     when '5'
       include:markdown-it ../articles/reset.md
-    //- when '6'
-    //-   include:markdown-it ../articles/6/revert.md
-    //- when '7'
-    //-   include:markdown-it ../articles/7/delete-branch.md
-    //- when '8'
-    //-   include:markdown-it ../articles/8/unmerge.md
+    when '6'
+      include:markdown-it ../articles/revert.md
+    when '7'
+      include:markdown-it ../articles/delete-branch.md
+    when '8'
+      include:markdown-it ../articles/unmerge.md
     //- when '9'
     //-   include:markdown-it ../articles/9/delete-tag.md
     default
