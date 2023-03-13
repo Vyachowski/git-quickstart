@@ -1,14 +1,8 @@
-## Create new branch
+## Unmerge branch
 --------------
 
-##### To create a new one
+Find a commit with a 'log' command to find a commit before merging 
+and then run  
 
-`git checkout -b [branch name]`
+`git reset --hard [hash-of-commit-before-the-merge]`
 
-Also if you want to synchronize your local branch and remote execute  
-
-`git push -u origin [branch name]`
-
-##### To switch between branches  
-
-`git switch [branch name]`

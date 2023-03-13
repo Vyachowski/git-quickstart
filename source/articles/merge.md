@@ -1,14 +1,6 @@
-## Create new branch
+## Merge one branch into another
 --------------
 
-##### To create a new one
+Stand to the branch in which you want to merge other branch and execute    
 
-`git checkout -b [branch name]`
-
-Also if you want to synchronize your local branch and remote execute  
-
-`git push -u origin [branch name]`
-
-##### To switch between branches  
-
-`git switch [branch name]`
+`git merge [branch name]`
