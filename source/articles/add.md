@@ -1,4 +1,4 @@
-## Add changes to index
+## Stage changes to index
 --------------
 
 ##### For all files  

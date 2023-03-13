@@ -1,4 +1,4 @@
-## To remove changed file
+## Unstage changes
 --------------
 
 ##### For all files  
