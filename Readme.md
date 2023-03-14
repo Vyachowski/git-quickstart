@@ -6,12 +6,12 @@ One page site with a essential commands to use git (online cheatsheet)
 
 An engine for create guides and cheatsheets with such benefits as:
 
-* Multilingual version
-* Dark and Light Themes
-* Cross-browsers and cross-devices support
-* Simple and pretty design based on Bootstrap 5
-* Easy to customize template
-* Easy to extend template
+- [x] Cross-browsers and cross-devices support
+- [x] Simple and pretty design based on Bootstrap 5
+- [x] Easy to customize template
+- [x] Easy to extend template
+- [ ] Multilingual version
+- [ ] Dark and Light Themes
 
 ## Getting Started
 
@@ -25,16 +25,15 @@ An engine for create guides and cheatsheets with such benefits as:
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* This article is in progress
+* 
+```
+Creating tutorial...
+```
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+Just [visit deployed website](https://bobrishka.com) and enjoy.
 
 <!-- ## Help
 
