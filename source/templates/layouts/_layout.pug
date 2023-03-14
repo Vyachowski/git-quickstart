@@ -6,15 +6,15 @@ html(lang= lang)
   body
     .main-wrapper(data-bs-spy="scroll" data-bs-target="#navigation_header" tabindex="0" data-bs-smooth-scroll="true")
       block header
-        header.navbar.navbar-dark.navbar-expand-lg.bd-navbar.sticky-top.bg-primary
-          include ../includes/_header
+      header.navbar.navbar-dark.navbar-expand-lg.bd-navbar.sticky-top.bg-primary
+        include ../includes/_header
       block main
-        main
-          include ../includes/_hero
-          include ../includes/_guide
+      main
+        include ../includes/_hero
+        include ../includes/_guide
       block footer
-        footer.container
-          include ../includes/_footer
+      footer.container
+        include ../includes/_footer
     block scripts
       script(src="js/script.min.js")
 
