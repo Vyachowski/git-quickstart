@@ -97,6 +97,12 @@ export const styles = () => {
   .pipe(svgo())
   .pipe(gulp.dest('build/img'));
 
+  const bootstrapSprite = () => {
+  return gulp.src('source/assets/icons/*.svg')
+  .pipe(rename('sprite.svg'))
+  .pipe(gulp.dest('build/img'));
+  }
+
   const sprite = () => {
   return gulp.src('source/assets/icons/*.svg')
   .pipe(svgo())
@@ -174,7 +180,7 @@ export const styles = () => {
   pugToHtml,
   scripts,
   svg,
-  sprite,
+  bootstrapSprite,
   createWebp
   ),
   );
@@ -189,7 +195,7 @@ export const styles = () => {
   pugToHtml,
   scripts,
   svg,
-  sprite,
+  bootstrapSprite,
   createWebp
   ),
   gulp.series(
