@@ -45,7 +45,7 @@ export const styles = () => {
   // PUG
 
   const pugToHtml = () => {
-    return gulp.src('source/templates/*.pug')
+    return gulp.src('source/pages/*.pug')
     .pipe(pug())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build'));

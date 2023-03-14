@@ -26,9 +26,9 @@ An engine for create guides and cheatsheets with such benefits as:
 ### Installing
 
 * This article is in progress
-* 
+
 ```
-Creating tutorial...
+Creating description...
 ```
 
 ### Executing program
@@ -44,7 +44,7 @@ command to run if program contains helper info
 
 ## Authors
 
-Feel free to contact me and help the project
+Feel free to contact me and help with the project
 
 Slava Haikin
 [@vyachowski](https://twitter.com/vyachowski)
