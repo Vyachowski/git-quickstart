@@ -30,7 +30,7 @@ import cache from 'gulp-cache';
 // Styles
 
 export const styles = () => {
-  return gulp.src('source/*.scss', { sourcemaps: true })
+  return gulp.src('source/scss/*.scss', { sourcemaps: true })
   .pipe(plumber())
   .pipe(sass())
   .pipe(postcss([
@@ -45,7 +45,7 @@ export const styles = () => {
   // PUG
 
   const pugToHtml = () => {
-    return gulp.src('source/*.pug')
+    return gulp.src('source/templates/*.pug')
     .pipe(pug())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build'));
@@ -62,7 +62,7 @@ export const styles = () => {
   // Scripts
 
   const scripts = () => {
-  return gulp.src('source/*.js')
+  return gulp.src('source/js/*.js')
   .pipe(jsmin())
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('build/js'))
@@ -72,20 +72,20 @@ export const styles = () => {
   // Images
 
   const optimizeImages = () => {
-  return gulp.src('source/img/**/*.{png,jpg}')
+  return gulp.src('source/assets/images/*.{png,jpg}')
   .pipe(imagemin())
   .pipe(gulp.dest('build/img'))
   }
 
   const copyImages = () => {
-  return gulp.src('source/img/**/*.{png,jpg}')
+  return gulp.src('source/assets/images/*.{png,jpg}')
   .pipe(gulp.dest('build/img'))
   }
 
   // WebP
 
   const createWebp = () => {
-  return gulp.src('source/img/**/*.{png,jpg}')
+  return gulp.src('source/assets/images/*.{png,jpg}')
   .pipe(webp())
   .pipe(gulp.dest('build/img'))
   }
@@ -93,12 +93,12 @@ export const styles = () => {
   // SVG
 
   const svg = () =>
-  gulp.src(['source/img/*.svg', '!source/img/icons/*.svg'])
+  gulp.src(['source/assets/images/*.svg', '!source/assets/icons/*.svg'])
   .pipe(svgo())
   .pipe(gulp.dest('build/img'));
 
   const sprite = () => {
-  return gulp.src('source/img/icons/*.svg')
+  return gulp.src('source/assets/icons/*.svg')
   .pipe(svgo())
   .pipe(svgstore({
   inlineSvg: true
