@@ -3,6 +3,9 @@ nav.container-xxl.bd-gutter.flex-wrap.flex-lg-nowrap
     include _logo
   .d-flex
     button.navbar-toggler.d-flex.d-lg-none.order-3.p-2(type='button', data-bs-toggle='offcanvas', data-bs-target='#bdNavbar', aria-controls='bdNavbar', aria-label='Toggle navigation')
+      svg.bi(xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' viewbox='0 0 16 16')
+        path(fill-rule='evenodd' d='M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z')
+    span.d-none.fs-6.pe-1 Menu
   #bdNavbar.offcanvas-lg.offcanvas-end.bg-primary.flex-grow-1(tabindex='-1', aria-labelledby='bdNavbarOffcanvasLabel', data-bs-scroll='true')
     .offcanvas-header.px-4.pb-0
       h5#bdNavbarOffcanvasLabel.offcanvas-title.text-white Bootstrap
@@ -14,7 +17,7 @@ nav.container-xxl.bd-gutter.flex-wrap.flex-lg-nowrap
           a.nav-link.py-2.px-0.px-lg-2(href='#scrollspyHeading1') Install
         li.nav-item.col-6.col-lg-auto
           a.nav-link.py-2.px-0.px-lg-2(href='#scrollspyHeading2') How To
-        //- FOR VERSION 1.1
+        //- FOR NEXT VERSION
         //- li.nav-item.col-6.col-lg-auto
         //-   a.nav-link.py-2.px-0.px-lg-2(href='#scrollspyHeading3') Other guides
       hr.d-lg-none.text-white-50
@@ -34,7 +37,7 @@ nav.container-xxl.bd-gutter.flex-wrap.flex-lg-nowrap
         li.nav-item.py-2.py-lg-1.col-12.col-lg-auto
           .vr.d-none.d-lg-flex.h-100.mx-lg-2.text-white
           hr.d-lg-none.my-2.text-white-50
-        //- FOR VERSION 1.1
+        //- FOR NEXT VERSION
         //- li.nav-item.dropdown
           button.btn.btn-link.nav-link.py-2.px-0.px-lg-2.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false', data-bs-display='static')
             span.d-lg-none(aria-hidden='true') Language:
