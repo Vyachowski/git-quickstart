@@ -8,8 +8,8 @@ section#scrollspyHeading2.container
           button.nav-link(id=`${value}-tab` class=activeTab data-bs-toggle='tab' data-bs-target=`#${value}-tab-pane` type='button' role='tab' aria-controls=`${value}-tab-pane` aria-selected='true')= value
     #myTabContent.tab-content.border-start.border-end.border-bottom
       each value, key in steps
-        - const activeTab= key === '1' ? "active show" : ""
-        .tab-pane.fade(class=activeTab id=`${value}-tab-pane` role='tabpanel' aria-labelledby=`${value}-tab` tabindex='0')
+        - const activeTabPane= key === '1' ? "active show" : ""
+        .tab-pane.fade(class=activeTabPane id=`${value}-tab-pane` role='tabpanel' aria-labelledby=`${value}-tab` tabindex='0')
             .container.px-4.py-5
               article.row
                 include _guide-content
