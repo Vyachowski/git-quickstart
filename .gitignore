@@ -1,13 +1,16 @@
+//- Folders
 .DS_Store
 .idea
+build
+dev_tools
+node_modules
+Thumbs.db
+
+//- Files
 *.ai
 *.log
 *.pdf
 *.psd
 *.sublime*
-node_modules/
-npm-debug.*
-Thumbs.db
 *.code-workspace
-images/PixelPerfect
-build/
+npm-debug.*
