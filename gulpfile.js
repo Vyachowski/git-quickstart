@@ -27,6 +27,8 @@ import { deleteAsync as del } from 'del';
 import browser from 'browser-sync';
 import cache from 'gulp-cache';
 
+//---- GULP OPEARTIONS
+
 // Styles
 
 export const styles = () => {
@@ -126,7 +128,7 @@ export const styles = () => {
   done();
   }
 
-  //Clear Cache
+  // Clear Cache
 
   export const clearCache = () => cache.clearAll();
 
@@ -165,6 +167,9 @@ export const styles = () => {
   gulp.watch('source/**/*.pug', gulp.series(pugToHtml, clearCache, reload));
   }
 
+
+  //---- GULP TASKS
+
   // Reset
 
   export const reset = clean;
@@ -185,7 +190,7 @@ export const styles = () => {
   ),
   );
 
-  // Default
+  // Start
   export default gulp.series(
   clean,
   copy,
