@@ -43,6 +43,30 @@ export const styles = () => {
   .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
   .pipe(browser.stream());
   }
+  // Favicon
+  const faviconIco = () => {
+    return gulp.src('source/assets/favicon/*.ico')
+    .pipe(rename('favicon.ico'))
+    .pipe(gulp.dest('build'));
+  }
+
+  const faviconApple = () => {
+    return gulp.src('source/assets/favicon/*.png')
+    .pipe(rename('apple-touch-icon.png'))
+    .pipe(gulp.dest('build/img'));
+  }
+
+  const faviconPng = () => {
+    return gulp.src('source/assets/favicon/*.png')
+    .pipe(rename('favicon.png'))
+    .pipe(gulp.dest('build/img'));
+  }
+
+  const faviconSvg = () => {
+    return gulp.src('source/assets/favicon/*.svg')
+    .pipe(rename('favicon.svg'))
+    .pipe(gulp.dest('build/img'));
+  }
 
   // PUG
 
@@ -184,6 +208,10 @@ export const styles = () => {
   styles,
   pugToHtml,
   scripts,
+  faviconSvg,
+  faviconIco,
+  faviconApple,
+  faviconPng,
   svg,
   bootstrapSprite,
   createWebp
@@ -191,6 +219,7 @@ export const styles = () => {
   );
 
   // Start
+
   export default gulp.series(
   clean,
   copy,
@@ -199,6 +228,10 @@ export const styles = () => {
   styles,
   pugToHtml,
   scripts,
+  faviconSvg,
+  faviconIco,
+  faviconApple,
+  faviconPng,
   svg,
   bootstrapSprite,
   createWebp

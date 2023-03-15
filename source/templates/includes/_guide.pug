@@ -1,15 +1,15 @@
-section#scrollspyHeading2.container
-  h1.display-3.fw-bold.mb-4.text-center Git How To
+section#scrollspyHeading2.container.p-5.shadow-lg.rounded
+  h1.display-3.fw-bold.mb-4.text-center Git Commands
   .row
-    ul#myTab.nav.nav-tabs.nav-fill(role='tablist')
+    ul#myTab.nav.nav-pills.nav-fill(role='tablist')
       each value, key in steps
         li.nav-item(role='presentation')
           - const activeTab= key === '1' ? "active" : ""
           button.nav-link(id=`${value}-tab` class=activeTab data-bs-toggle='tab' data-bs-target=`#${value}-tab-pane` type='button' role='tab' aria-controls=`${value}-tab-pane` aria-selected='true')= value
-    #myTabContent.tab-content.border-start.border-end.border-bottom
+    #myTabContent.tab-content
       each value, key in steps
         - const activeTabPane= key === '1' ? "active show" : ""
         .tab-pane.fade(class=activeTabPane id=`${value}-tab-pane` role='tabpanel' aria-labelledby=`${value}-tab` tabindex='0')
-            .container.px-4.py-5
-              article.row
+            .container.px-4.pt-5
+              article.row.row-cols-1.row-cols-md-2
                 include _guide-content
