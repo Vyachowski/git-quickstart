@@ -23,24 +23,9 @@ An engine for create guides and cheatsheets with such benefits as:
 * Npm
 * Pug
 
-### Installing
-
-* This article is in progress
-
-```
-Creating description...
-```
-
 ### Executing program
 
-Just [visit deployed website](https://bobrishka.com) and enjoy.
-
-<!-- ## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-``` -->
+Just [visit deployed website](https://codebless.me) and enjoy.
 
 ## Authors
 
@@ -64,5 +49,5 @@ This project is licensed under the MIT License - just because it sounds great :)
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
+Inspiration and best framework
 * [Bootstrap](https://github.com/twbs/bootstrap)
