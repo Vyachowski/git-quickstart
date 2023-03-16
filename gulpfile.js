@@ -9,6 +9,7 @@ const sass = gulpSass(dartSass);
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
+import purgecss from 'gulp-purgecss';
 // File modifiers
 import rename from 'gulp-rename';
 import terser from 'gulp-terser';
@@ -42,6 +43,14 @@ export const styles = () => {
   .pipe(rename('style.min.css'))
   .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
   .pipe(browser.stream());
+  }
+
+  const purgeCSS = () => {
+    return gulp.src('build/css/*.css')
+        .pipe(purgecss({
+            content: ['build/*.html']
+        }))
+        .pipe(gulp.dest('build/css'))
   }
   // Favicon
   const faviconIco = () => {
@@ -216,6 +225,7 @@ export const styles = () => {
   bootstrapSprite,
   createWebp
   ),
+  purgeCSS,
   );
 
   // Start
@@ -236,6 +246,7 @@ export const styles = () => {
   bootstrapSprite,
   createWebp
   ),
+  purgeCSS,
   gulp.series(
   server,
   watcher
