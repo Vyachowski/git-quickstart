@@ -4,12 +4,12 @@ section#scrollspyHeading2.container.p-5.shadow-lg.rounded
     ul#myTab.nav.nav-pills.nav-fill(role='tablist')
       each value, key in steps
         li.nav-item(role='presentation')
-          - const activeTab= key === '1' ? "active" : ""
-          button.nav-link(id=`${value}-tab` class=activeTab data-bs-toggle='tab' data-bs-target=`#${value}-tab-pane` type='button' role='tab' aria-controls=`${value}-tab-pane` aria-selected='true')= value
+          - const isActiveTab = key === '1'
+          button.nav-link(id=`${value}-tab` class={active: isActiveTab === true} data-bs-toggle='tab' data-bs-target=`#${value}-tab-pane` type='button' role='tab' aria-controls=`${value}-tab-pane` aria-selected=isActiveTab.toString())= value
     #myTabContent.tab-content
       each value, key in steps
         - const activeTabPane= key === '1' ? "active show" : ""
         .tab-pane.fade(class=activeTabPane id=`${value}-tab-pane` role='tabpanel' aria-labelledby=`${value}-tab` tabindex='0')
             .container.px-4.pt-5
-              article.row.row-cols-1.row-cols-md-2
+              article.row.row-cols-1.row-cols-md-1
                 include _guide-content
