@@ -1,11 +1,21 @@
-include ../components/_codeTab
-include ../components/_codeTabPane
-include ../components/_resultTab
-
 mixin gitAction(header, description = "")
   h3= header
   if description.length > 0
     p= description
-  +codeTab
-  +codeTabPane
-  +resultTab
+  ul#codeTab.nav(role='tablist')
+    li.nav-item(role='presentation')
+      a#run-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#run-tab-pane' type='button' role='tab' aria-controls='run-tab-pane' aria-selected='true') Run
+    li.nav-item(role='presentation')
+      a#undo-tab.nav-link(data-bs-toggle='tab' data-bs-target='#undo-tab-pane' type='button' role='tab' aria-controls='undo-tab-pane' aria-selected='false') Undo
+  #codeTabContent.tab-content
+    #run-tab-pane.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='run-tab' tabindex='0')
+      if block
+        block run
+      else
+        p No content provided :(
+    #undo-tab-pane.tab-pane.fade(role='tabpanel' aria-labelledby='undo-tab' tabindex='0')
+      if block
+        block undo
+      else
+        p No content provided :(
+  code git pipidastrit --version
