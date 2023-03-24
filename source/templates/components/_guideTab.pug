@@ -1,0 +1,3 @@
+mixin guideTab(value, isActiveTab = false)
+  li.nav-item(role='presentation')
+    button.nav-link(id=`${value}-tab` class={active: isActiveTab === true} data-bs-toggle='tab' data-bs-target=`#${value}-tab-pane` type='button' role='tab' aria-controls=`${value}-tab-pane` aria-selected=isActiveTab.toString())= value

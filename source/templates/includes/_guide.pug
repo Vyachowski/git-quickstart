@@ -2,16 +2,11 @@ section#scrollspyHeading2.container.p-5.shadow-lg.rounded
   h1.display-3.fw-bold.mb-4.text-center Git Commands
   .row
     ul#myTab.nav.nav-pills.nav-fill(role='tablist')
-      each value, key in steps
-        li.nav-item(role='presentation')
-          - const isActiveTab = key === '1'
-          button.nav-link(id=`${value}-tab` class={active: isActiveTab === true} data-bs-toggle='tab' data-bs-target=`#${value}-tab-pane` type='button' role='tab' aria-controls=`${value}-tab-pane` aria-selected=isActiveTab.toString())= value
+      +guideTab("Basics", true)
+      +guideTab("Initialize")
+      +guideTab("Copy")
     #myTabContent.tab-content
-      each value, key in steps
-        - const isActiveTabPane= key === '1'
-        .tab-pane.fade(class={"active show": isActiveTabPane === true} id=`${value}-tab-pane` role='tabpanel' aria-labelledby=`${value}-tab` tabindex='0')
-            .container.p-0.pt-5
-              article.row.row-cols-1.row-cols-md-1
-                include _guide-content
-
-// .container.px-4.pt-5
+      +guideTabPane("Basics", true)
+        include ../../data/articles/basics.pug
+      +guideTabPane("Initialize")
+      +guideTabPane("Copy")

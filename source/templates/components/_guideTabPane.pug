@@ -1,0 +1,9 @@
+mixin guideTabPane(value, isActiveTabPane = false)
+  .tab-pane.fade(class={"active show": isActiveTabPane === true} id=`${value}-tab-pane` role='tabpanel' aria-labelledby=`${value}-tab` tabindex='0')
+    .container.p-0.pt-5
+      article.row.row-cols-1.row-cols-md-1
+        .col
+          if block
+            block
+          else
+            h3 No content provided :(
