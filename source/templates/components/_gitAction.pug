@@ -1,0 +1,11 @@
+include ../components/_codeTab
+include ../components/_codeTabPane
+include ../components/_resultTab
+
+mixin gitAction(header, description = "")
+  h3= header
+  if description.length > 0
+    p= description
+  +codeTab
+  +codeTabPane
+  +resultTab
