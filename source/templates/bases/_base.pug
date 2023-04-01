@@ -1,22 +1,26 @@
 doctype html
 block variables
 block components
-  include ../components/_guideTab
-  include ../components/_guideTabPane
-  include ../components/_guideSample
 html(lang= lang)
   head
-    include ../includes/_head
+    meta(charset='UTF-8')
+    meta(name='robots' content='noindex,nofollow,noarchive')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title= page_title
+    meta(name='description' content=page_description)
+    link(rel="preload" href="css/style.min.css" as="style")
+    link(rel='icon' href='favicon.ico' type='image/x-icon' sizes='any')
+    link(rel='icon' href='img/favicon.png' type='image/png')
+    link(rel='apple-touch-icon' href='img/apple-touch-icon.png' type='image/png')
+    link(rel='icon' href='img/favicon.svg' type='image/svg+xml')
+    link(rel='stylesheet' href='css/style.min.css')
   body
     .main-wrapper(data-bs-spy="scroll" data-bs-target="#navigation_header" tabindex="0" data-bs-smooth-scroll="true")
-      block header
       header.navbar.navbar-dark.navbar-expand-lg.bd-navbar.sticky-top.bg-primary
         include ../includes/_header
-      block main
       main
-        include ../includes/_hero
-        include ../includes/_guide
-      block footer
+        block content
       footer.container
         include ../includes/_footer
     block scripts

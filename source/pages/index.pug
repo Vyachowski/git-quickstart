@@ -1,9 +1,12 @@
 extends ../templates/bases/_base
-block variables
+append variables
   - const lang = "en"
-  - const title = "Git cheatsheet for beginners"
-  - const hero_title = "A simple cheatsheet for the Git"
-  - const hero_subtitle = "Start from a scratch a new typical project based on git and maintain it with a 10 simple steps"
-  //- IMPORTANT: Allowed only letters and "-"/"_" symbols in steps values. Spaces are disallowed.
-  //- - const steps = { "1": "Basics", 2: "Initialize", 3: "Copy", 4: "Stage", 5: "Commit", 6: "Push", 7: "Branch", 8: "Merge", 9: "Update", 10: "Log" }
-  //- - const stepsArray = [ "Basics", "Initialize", "Copy", "Stage", "Commit", "Push", "Branch", "Merge", "Update", "Log" ]
+  - const page_title = "Git cheatsheet for beginners"
+  - const page_description = "A simpliest cheatsheet fo git for beginners"
+append components
+  include ../templates/components/_guideTab
+  include ../templates/components/_guideTabPane
+  include ../templates/components/_guideSample
+append content
+  include ../templates/includes/_hero
+  include ../templates/includes/_guide
