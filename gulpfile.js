@@ -50,6 +50,21 @@ export const styles = () => {
   .pipe(browser.stream());
   }
 
+  export const stylesUgly = () => {
+    return gulp.src('source/scss/*.scss', { sourcemaps: true })
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(postcss([
+    autoprefixer(),
+    csso({
+      sourceMap: true,
+    })
+    ]))
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
+    .pipe(browser.stream());
+    }
+
   // Favicon
   const faviconIco = () => {
     return gulp.src('source/assets/favicon/*.ico')
@@ -232,7 +247,7 @@ export const styles = () => {
   copy,
   copyImages,
   gulp.parallel(
-  styles,
+  stylesUgly,
   pugToHtml,
   scripts,
   faviconSvg,

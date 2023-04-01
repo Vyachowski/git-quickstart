@@ -1,5 +1,6 @@
-mixin guideTabPane(value, isActiveTabPane = false)
-  .tab-pane.fade(class={"active show": isActiveTabPane === true} id=`${value}-tab-pane` role='tabpanel' aria-labelledby=`${value}-tab` tabindex='0')
+mixin guideTabPane(headerText, isActiveTabPane = false)
+  - const tabId = headerText.match(/(\w+)/)[1];
+  .tab-pane.fade(class={"active show": isActiveTabPane === true} id=`${tabId}-tab-pane` role='tabpanel' aria-labelledby=`${tabId}-tab` tabindex='0')
     .container.p-0.pt-5
       article.row.row-cols-1.row-cols-md-1
         .col

@@ -1,3 +1,4 @@
-mixin guideTab(value, isActiveTab = false)
+mixin guideTab(headerText, isActiveTab = false)
+  - const tabId = headerText.match(/(\w+)/)[1];
   li.nav-item(role='presentation')
-    button.nav-link(id=`${value}-tab` class={active: isActiveTab === true} data-bs-toggle='tab' data-bs-target=`#${value}-tab-pane` type='button' role='tab' aria-controls=`${value}-tab-pane` aria-selected=isActiveTab.toString())= value
+    button.nav-link(id=`${tabId}-tab` class={active: isActiveTab === true} data-bs-toggle='tab' data-bs-target=`#${tabId}-tab-pane` type='button' role='tab' aria-controls=`${tabId}-tab-pane` aria-selected=isActiveTab.toString())= headerText

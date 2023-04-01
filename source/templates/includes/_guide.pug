@@ -2,11 +2,11 @@ section#scrollspyHeading2.container.p-5.shadow-lg.rounded
   h1.display-3.fw-bold.mb-4.text-center Git Commands
   .row
     ul#myTab.nav.nav-pills.nav-fill(role='tablist')
-      +guideTab("Basics", true)
-      +guideTab("Initialize")
-      +guideTab("Copy")
+      +guideTab('Basics', true)
+      +guideTab('Setup')
+      +guideTab('Copy')
     #myTabContent.tab-content
-      +guideTabPane("Basics", true)
+      +guideTabPane('Basics', true)
         include ../../data/articles/basics.pug
-      +guideTabPane("Initialize")
-      +guideTabPane("Copy")
+      +guideTabPane('Setup')
+      +guideTabPane('Copy')
