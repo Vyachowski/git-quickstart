@@ -1,16 +1,16 @@
-mixin guideChunk(number, headerText = '', runText = '', undoText = '', descriptionText = '')
+mixin guideChunk(number, headerText = '', runCommand = '', undoCommand = '', descriptionText = '')
   h3.mb-3= headerText
   if descriptionText.length > 0
     p= descriptionText
   ul.nav.nav-tabs(role='tablist')
     li.nav-item(role='presentation')
       a.nav-link.active(id='run-tab' + number data-bs-toggle='tab' data-bs-target='#run' + number type='button' role='tab' aria-controls='run-tab-pane' + number aria-selected='true') Run
-    if undoText.length > 0
+    if undoCommand.length > 0
       li.nav-item(role='presentation')
         a.nav-link(id='undo-tab' + number data-bs-toggle='tab' data-bs-target='#undo' + number type='button' role='tab' aria-controls='undo-tab-pane' + number aria-selected='false') Undo
   .tab-content.p-3.border-start.border-end.border-bottom.mb-3
     .tab-pane.fade.show.active(id='run' + number role='tabpanel' aria-labelledby='run-tab' + number tabindex='0')
-      code= runText
-    if undoText.length > 0
+      code= runCommand
+    if undoCommand.length > 0
       .tab-pane.fade(id='undo' + number role='tabpanel' aria-labelledby='undo-tab' + number tabindex='0')
-        code= undoText
+        code= undoCommand

@@ -3,10 +3,6 @@ section#scrollspyHeading2.container.p-5.shadow-lg.rounded
   .row
     ul#myTab.nav.nav-pills.nav-fill(role='tablist')
       +guideTab('Frequently used', true)
-      +guideTab('Setup')
-      +guideTab('Copy')
     #myTabContent.tab-content
       +guideTabPane('Frequently used', true)
         include ../../data/articles/basics.pug
-      +guideTabPane('Setup')
-      +guideTabPane('Copy')
