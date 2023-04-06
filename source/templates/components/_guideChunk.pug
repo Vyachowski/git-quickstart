@@ -1,7 +1,6 @@
 mixin guideChunk(number, headerText = '', runCommand = '', undoCommand = '', descriptionText = '')
-  h3.mb-3= headerText
-  if descriptionText.length > 0
-    p= descriptionText
+  p.lead.mb-3
+    strong= headerText
   ul.nav.nav-tabs(role='tablist')
     li.nav-item(role='presentation')
       a.nav-link.active(id='run-tab' + number data-bs-toggle='tab' data-bs-target='#run' + number type='button' role='tab' aria-controls='run-tab-pane' + number aria-selected='true') Run
@@ -14,3 +13,6 @@ mixin guideChunk(number, headerText = '', runCommand = '', undoCommand = '', des
     if undoCommand.length > 0
       .tab-pane.fade(id='undo' + number role='tabpanel' aria-labelledby='undo-tab' + number tabindex='0')
         code= undoCommand
+  if descriptionText.length > 0
+    p
+      em= descriptionText

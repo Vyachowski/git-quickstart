@@ -1,4 +1,4 @@
-h2.display-5.mb-3 Configuration
+h2.mb-3 Configuration
 +guideChunk(
   1,
   'Set up your name',
@@ -13,7 +13,7 @@ h2.display-5.mb-3 Configuration
   '',
   'Important: Your email should be equal to your email on GitHub (if you use it)',
   )
-h2.display-5.mb-3 Initialization
+h2.mb-3 Initialization
 +guideChunk(
   3,
   'Start a new repo',
@@ -21,7 +21,7 @@ h2.display-5.mb-3 Initialization
   'rm -rf .git',
   'To remove git from the repository you can just delete the .git folder from your file manager',
   )
-h2.display-5.mb-3 Clone repo
+h2.mb-3 Clone
 +guideChunk(
   4,
   'Clone an existing local repo',
@@ -32,15 +32,31 @@ h2.display-5.mb-3 Clone repo
 +guideChunk(
   5,
   'Clone an existing remote GitHub repo',
-  'git clone https://github.com/user/repo.git',
+  'git clone https://github.com/<user>/<repo.git>',
   '',
   'To undo this action just delete all files and subfolder except .git',
   )
-h2.display-5.mb-3 Start tracking files
+h2.mb-3 Tracking files
 +guideChunk(
   6,
-  'Add',
-  'git add <filename>',
-  'git restore --staged <filename>',
-  'Or replace a filename with . to add all files',
+  'Add new file(s) for tracking',
+  'git add <file>',
+  'git rm --cached <file>',
+  'Replace a <file> with . to add all files. For untracking all files you need also add -r flag.',
+  )
+h2.mb-3 Commits
++guideChunk(
+  7,
+  'Save changes to have an option for returning',
+  'git commit -m "<message>"',
+  'git reset --hard HEAD~1',
+  'Warning! "Git reset" will entirely delete commited changes both from your local and remote repo',
+  )
+h2.mb-3 Branches
++guideChunk(
+  8,
+  'Create new branch',
+  'git checkout -b <branchname>',
+  'git pobrit',
+  '',
   )
