@@ -78,7 +78,13 @@ h2.mb-3 Log
 h2.mb-3 When all goes wrong
 +guideChunk(
   11,
-  'View log of commits',
-  'git log --oneline',
+  'Reset local changes in file to last (HEAD) commit',
+  'git checkout -- <filename>',
+  '',
+  )
++guideChunk(
+  12,
+  'Reset all local changes in file to last (HEAD) commit',
+  'git checkout -- .',
   '',
   )
