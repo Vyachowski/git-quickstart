@@ -1,7 +1,9 @@
 //- Folders
 .DS_Store
 .idea
+.vscode
 build
+deploy
 dev_tools
 node_modules
 Thumbs.db

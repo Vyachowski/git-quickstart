@@ -50,7 +50,7 @@ export const styles = () => {
   .pipe(browser.stream());
   }
 
-  export const stylesUgly = () => {
+  export const stylesBuild = () => {
     return gulp.src('source/scss/*.scss', { sourcemaps: true })
     .pipe(plumber())
     .pipe(sass())
@@ -62,6 +62,24 @@ export const styles = () => {
     ]))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
+    .pipe(browser.stream());
+    }
+
+  export const stylesDeploy = () => {
+    return gulp.src('source/scss/*.scss', { sourcemaps: true })
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(postcss([
+    autoprefixer(),
+    purgeCss({
+      content: ['source/**/*.pug', 'source/**/*.js']
+    }),
+    csso({
+      sourceMap: true,
+    })
+    ]))
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('deploy/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
     }
 
@@ -90,22 +108,59 @@ export const styles = () => {
     .pipe(gulp.dest('build/img'));
   }
 
+  const faviconIcoDeploy = () => {
+    return gulp.src('source/assets/favicon/*.ico')
+    .pipe(rename('favicon.ico'))
+    .pipe(gulp.dest('deploy'));
+  }
+
+  const faviconAppleDeploy = () => {
+    return gulp.src('source/assets/favicon/*.png')
+    .pipe(rename('apple-touch-icon.png'))
+    .pipe(gulp.dest('deploy/img'));
+  }
+
+  const faviconPngDeploy = () => {
+    return gulp.src('source/assets/favicon/*.png')
+    .pipe(rename('favicon.png'))
+    .pipe(gulp.dest('deploy/img'));
+  }
+
+  const faviconSvgDeploy = () => {
+    return gulp.src('source/assets/favicon/*.svg')
+    .pipe(rename('favicon.svg'))
+    .pipe(gulp.dest('deploy/img'));
+  }
+
   // PUG
 
   const pugToHtml = () => {
     return gulp.src('source/*.pug')
-    .pipe(pug())
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(pug({ pretty: true }))
     .pipe(gulp.dest('build'));
     }
 
-  // HTML
+  const pugToHtmlBuild = () => {
+    return gulp.src('source/*.pug')
+    .pipe(pug({ pretty: true }))
+    .pipe(htmlmin({ collapseWhitespace: false }))
+    .pipe(gulp.dest('build'));
+    }
 
-  const html = () => {
-  return gulp.src('source/*.html')
-  .pipe(htmlmin({ collapseWhitespace: false }))
-  .pipe(gulp.dest('build'));
-  }
+  const pugToHtmlDeploy = () => {
+    return gulp.src('source/*.pug')
+    .pipe(pug())
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('deploy'));
+    }
+
+  // // HTML
+
+  // const html = () => {
+  // return gulp.src('source/*.html')
+  // .pipe(htmlmin({ collapseWhitespace: false }))
+  // .pipe(gulp.dest('build'));
+  // }
 
   // Scripts
 
@@ -116,6 +171,13 @@ export const styles = () => {
   .pipe(gulp.dest('build/js'))
   .pipe(browser.stream());
   }
+
+  const scriptsDeploy = () => {
+    return gulp.src('source/js/*.js')
+    .pipe(jsmin())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('deploy/js'));
+    }
 
   // Images
 
@@ -130,6 +192,12 @@ export const styles = () => {
   .pipe(gulp.dest('build/img'))
   }
 
+  const optimizeImagesDeploy = () => {
+    return gulp.src('source/assets/images/*.{png,jpg}')
+    .pipe(imagemin())
+    .pipe(gulp.dest('deploy/img'))
+    }
+
   // WebP
 
   const createWebp = () => {
@@ -137,6 +205,12 @@ export const styles = () => {
   .pipe(webp())
   .pipe(gulp.dest('build/img'))
   }
+
+  const createWebpDeploy = () => {
+    return gulp.src('source/assets/images/*.{png,jpg}')
+    .pipe(webp())
+    .pipe(gulp.dest('deploy/img'))
+    }
 
   // SVG
 
@@ -161,6 +235,27 @@ export const styles = () => {
   .pipe(gulp.dest('build/img'));
   }
 
+  const svgDeploy = () =>
+  gulp.src(['source/assets/images/*.svg', '!source/assets/icons/*.svg'])
+  .pipe(svgo())
+  .pipe(gulp.dest('deploy/img'));
+
+  const bootstrapSpriteDeploy = () => {
+  return gulp.src('source/assets/icons/*.svg')
+  .pipe(rename('sprite.svg'))
+  .pipe(gulp.dest('deploy/img'));
+  }
+
+  const spriteDeploy = () => {
+  return gulp.src('source/assets/icons/*.svg')
+  .pipe(svgo())
+  .pipe(svgstore({
+  inlineSvg: true
+  }))
+  .pipe(rename('sprite.svg'))
+  .pipe(gulp.dest('deploy/img'));
+  }
+
   // Copy
 
   const copy = (done) => {
@@ -174,6 +269,17 @@ export const styles = () => {
   done();
   }
 
+  const copyDeploy = (done) => {
+    gulp.src([
+    'source/fonts/*.{woff2,woff}',
+    'source/*.ico',
+    ], {
+    base: 'source'
+    })
+    .pipe(gulp.dest('deploy'))
+    done();
+    }
+
   // Clear Cache
 
   export const clearCache = () => cache.clearAll();
@@ -183,6 +289,10 @@ export const styles = () => {
   const clean = () => {
   return del('build');
   };
+
+  const cleanDeploy = () => {
+    return del('deploy');
+    };
 
   // Server
 
@@ -228,7 +338,7 @@ export const styles = () => {
   optimizeImages,
   gulp.parallel(
   styles,
-  pugToHtml,
+  pugToHtmlBuild,
   scripts,
   faviconSvg,
   faviconIco,
@@ -240,6 +350,26 @@ export const styles = () => {
   ),
   );
 
+  // Deploy
+
+  export const deploy = gulp.series(
+    cleanDeploy,
+    copyDeploy,
+    optimizeImagesDeploy,
+    gulp.parallel(
+    stylesDeploy,
+    pugToHtmlDeploy,
+    scriptsDeploy,
+    faviconSvgDeploy,
+    faviconIcoDeploy,
+    faviconAppleDeploy,
+    faviconPngDeploy,
+    svgDeploy,
+    bootstrapSpriteDeploy,
+    createWebpDeploy
+    ),
+    );
+
   // Start
 
   export default gulp.series(
@@ -247,7 +377,7 @@ export const styles = () => {
   copy,
   copyImages,
   gulp.parallel(
-  stylesUgly,
+  stylesBuild,
   pugToHtml,
   scripts,
   faviconSvg,
