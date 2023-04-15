@@ -1,0 +1,90 @@
+h2.mb-3 Configuration
++guideChunk(
+  1,
+  'Set up your name',
+  'git config --global user.name <your name>',
+  '',
+  '',
+  )
++guideChunk(
+  2,
+  'Set up your email',
+  'git config --global user.email <your email>',
+  '',
+  'Your email should be equal to your email on GitHub (if you use it)',
+  )
+h2.mb-3 Initialization
++guideChunk(
+  3,
+  'Start a new repo',
+  'git init',
+  'rm -rf .git',
+  'To remove git from the repository you can just delete the .git folder from your file manager',
+  )
+h2.mb-3 Clone
++guideChunk(
+  4,
+  'Clone an existing local repo',
+  'git clone path/to/repo',
+  'Just delete all files and subfolder except .git',
+  )
++guideChunk(
+  5,
+  'Clone an existing remote GitHub repo',
+  'git clone https://github.com/<user>/<repo.git>',
+  'To undo this action just delete all files and subfolder except .git',
+  )
+h2.mb-3 Tracking files
++guideChunk(
+  6,
+  'Add new file for tracking',
+  'git add <file>',
+  'git rm --cached <file>',
+  )
++guideChunk(
+  6,
+  'Add all files for tracking',
+  'git add .',
+  'git rm --cached -r .',
+  )
+h2.mb-3 Commits
++guideChunk(
+  7,
+  'Save changes to have a possibility for returning',
+  'git commit -m \'<message>\'',
+  'git reset --hard HEAD~1',
+  '\'Git reset\' will entirely delete commited changes both from your local and remote repo',
+  )
+h2.mb-3 Branches
++guideChunk(
+  8,
+  'Create new branch',
+  'git checkout -b <branchname>',
+  'git branch -d <branchname>',
+  )
++guideChunk(
+  9,
+  'Switch branch',
+  'git switch <branchname>',
+  '',
+  )
+h2.mb-3 Log
++guideChunk(
+  10,
+  'View log of commits',
+  'git log --oneline',
+  '',
+  )
+h2.mb-3 When all goes wrong
++guideChunk(
+  11,
+  'Reset local changes in file to last (HEAD) commit',
+  'git checkout -- <filename>',
+  '',
+  )
++guideChunk(
+  12,
+  'Reset all local changes to last (HEAD) commit',
+  'git checkout -- .',
+  '',
+  )

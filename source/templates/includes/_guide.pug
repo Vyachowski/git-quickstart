@@ -2,7 +2,9 @@ section#scrollspyHeading2.container.p-5.shadow-lg.rounded
   h1.display-3.fw-bold.mb-4.text-center Git Commands
   .row
     ul#myTab.nav.nav-pills.nav-fill(role='tablist')
-      +guideTab('Frequently used', true)
+      +guideTab('Setup', true)
+      +guideTab('Staging')
     #myTabContent.tab-content
-      +guideTabPane('Frequently used', true)
-        include ../../data/articles/basics.pug
+      +guideTabPane('Setup', true)
+        include ../../data/articles/setup.pug
+      +guideTabPane('Staging')
